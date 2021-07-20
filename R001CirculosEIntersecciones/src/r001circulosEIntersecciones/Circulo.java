@@ -2,49 +2,46 @@ package r001circulosEIntersecciones;
 
 public class Circulo {
 	private Punto centro;
-	private double radio;
-	private double xMax, xMin, yMax, yMin;
-	
+	private double radio;	
 	
 	public Circulo(Punto cen, double r) {
 		centro = cen;
 		radio = r;
-		xMax = centro.getCoordX() + radio;
-		xMin = centro.getCoordX() - radio;
-		yMax = centro.getCoordY() + radio;
-		yMin = centro.getCoordY() - radio;
+
 	}
 	
-	public boolean intersectanEnX(Circulo c) {
-		if((this.xMax > c.xMin && this.xMax < c.xMax) || 
-				(this.xMin > c.xMin && this.xMin < c.xMax)) {
-			return true;
-		} 		
-		return false;
-	}
-	
-	public boolean intersectanEnY(Circulo c) {
-		if((this.yMax < c.yMax && this.yMax > c.yMin) ||
-				this.yMin > c.yMin && this.yMin < c.yMax) {
-			return true;
-		}
-		return false;
-	}
-	
-	public boolean intersectaCon(Circulo c) {
-		boolean enX = intersectanEnX(c);
-		boolean enY = intersectanEnY(c);
-		System.out.println(enX + "\n" + enY);
-		if (enX || enY) {
-			return true;
-		} 	
+	public double getDistanciaPuntos(Circulo c) {
+		double dist = 0;
+		double xDeA, xDeB, yDeA, yDeB;
+		xDeA = this.centro.getCoordX();
+		xDeB = c.centro.getCoordX();
+		yDeA = this.centro.getCoordY();
+		yDeB = c.centro.getCoordY();
 		
-		return false;
+		dist = Math.sqrt((xDeA - xDeB) * (xDeA - xDeB) + (yDeA - yDeB) * (yDeA - yDeB));
+		return dist;
 	}
 	
-	public static void main(String[] args) {
-		Circulo c1 = new Circulo(new Punto(0, 0), 100.5);
-		Circulo c2 = new Circulo(new Punto(0, 0), 0.5);
-		System.out.println(c1.intersectaCon(c2)); // true
+	public double getSumaRadios(Circulo c) {
+		double sumaRadios;
+		sumaRadios = this.radio + c.radio;
+		return sumaRadios;
 	}
+		
+	public boolean intersectaCon(Circulo c) {
+		double distanciaCentros = getDistanciaPuntos(c);
+		double sumaRadios = getSumaRadios(c);
+		
+		if (distanciaCentros > sumaRadios) {
+			return false;
+		} 
+		return true;
+	}
+	
 }
+
+/* FUNDAMENTOS TEORICOS EN: 
+ * https://www.geeksforgeeks.org/check-two-given-circles-touch-intersect/
+ * https://mathworld.wolfram.com/Circle-CircleIntersection.html
+ * http://mimosa.pntic.mec.es/clobo/geoweb/circun3.htm 
+*/
