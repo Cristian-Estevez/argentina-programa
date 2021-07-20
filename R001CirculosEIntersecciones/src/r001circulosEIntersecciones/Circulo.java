@@ -9,10 +9,10 @@ public class Circulo {
 	public Circulo(Punto cen, double r) {
 		centro = cen;
 		radio = r;
-		xMax = centro.getCoordX() + r;
-		xMin = centro.getCoordX() - r;
-		yMax = centro.getCoordY() + r;
-		yMin = centro.getCoordY() - r;
+		xMax = centro.getCoordX() + radio;
+		xMin = centro.getCoordX() - radio;
+		yMax = centro.getCoordY() + radio;
+		yMin = centro.getCoordY() - radio;
 	}
 	
 	public boolean intersectanEnX(Circulo c) {
@@ -43,8 +43,8 @@ public class Circulo {
 	}
 	
 	public static void main(String[] args) {
-		Circulo c1 = new Circulo(new Punto(0, 0), 1);
-		Circulo c2 = new Circulo(new Punto(1, 1), 1.5);
+		Circulo c1 = new Circulo(new Punto(0, 0), 100.5);
+		Circulo c2 = new Circulo(new Punto(0, 0), 0.5);
 		System.out.println(c1.intersectaCon(c2)); // true
 	}
 }
