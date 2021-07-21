@@ -5,27 +5,27 @@ public class Circulo {
 	private double radio;	
 	
 	public Circulo(Punto cen, double r) {
+		if (r <= 0) {
+			System.err.println("El valor de radio solo puede ser positivo");
+			System.exit(0);
+		}
 		centro = cen;
 		radio = r;
-
 	}
 	
 	public double getDistanciaPuntos(Circulo c) {
-		double dist = 0;
-		double xDeA, xDeB, yDeA, yDeB;
-		xDeA = this.centro.getCoordX();
-		xDeB = c.centro.getCoordX();
-		yDeA = this.centro.getCoordY();
-		yDeB = c.centro.getCoordY();
+	
+		double x1 = this.centro.getCoordX();
+		double x2 = c.centro.getCoordX();
+		double y1 = this.centro.getCoordY();
+		double y2 = c.centro.getCoordY();
 		
-		dist = Math.sqrt((xDeA - xDeB) * (xDeA - xDeB) + (yDeA - yDeB) * (yDeA - yDeB));
+		double dist = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
 		return dist;
 	}
 	
 	public double getSumaRadios(Circulo c) {
-		double sumaRadios;
-		sumaRadios = this.radio + c.radio;
-		return sumaRadios;
+		return (double) (this.radio + c.radio);
 	}
 		
 	public boolean intersectaCon(Circulo c) {

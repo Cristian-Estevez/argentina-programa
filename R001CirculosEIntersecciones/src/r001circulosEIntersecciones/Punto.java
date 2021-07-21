@@ -2,7 +2,7 @@ package r001circulosEIntersecciones;
 
 public class Punto {
 	
-	private double coordX = 0, coordY = 0;
+	private double coordX, coordY;
 	
 	public Punto(double x, double y) {
 		coordX = x;

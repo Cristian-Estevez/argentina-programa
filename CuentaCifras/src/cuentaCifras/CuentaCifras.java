@@ -4,22 +4,23 @@ public class CuentaCifras {
 	
 	static public int contar(int num){
 		int resultado = 0; // aca esta el problema cuando llamo de vuelta me lo convierte en 0
-		
+		int retValue;
 		if ( num > 9) {
 			while (num % 10 != 0) {
 				resultado += num % 10;
 				System.out.println("" + resultado);
 				num = num / 10;
 			}
-			if (resultado > 9) {
-				return contar(resultado);
+			retValue = resultado;
+			if (retValue > 9) {
+				return contar(retValue);
 			}
 
 		} else {
 			return num;
 		}
 				
-		return resultado;
+		return retValue;
 	}
 	
 	public static void main(String[] args) {
