@@ -7,7 +7,7 @@ import org.junit.Test;
 public class CuentaCifrasTest {
 
 	@Test
-	public void test() {
+	public void contarTest() {
 		fail("Not yet implemented");
 	}
 
