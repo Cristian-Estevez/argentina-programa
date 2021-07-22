@@ -44,11 +44,10 @@ public class CirculoTest {
 		assertFalse(circuloA.intersectaCon(circuloB));
 	}
 	
-	/*
-	@Test
+	
+	@Test(expected = Error.class)
 	public void noSePuedeCrearUnCirculoConRadioNegativo() {
 		circuloA = new Circulo(new Punto(1, 1), -3);
-		assertNull(circuloA);
 	}
-	*/ //Este test no me deja correr el código por como esta armado el constructor
+	
 }

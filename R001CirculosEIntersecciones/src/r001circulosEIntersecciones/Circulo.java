@@ -5,12 +5,8 @@ public class Circulo {
 	private double radio;	
 	
 	public Circulo(Punto cen, double r) {
-		if (r <= 0) {
-			System.err.println("El valor de radio solo puede ser positivo");
-			System.exit(0);
-		}
 		centro = cen;
-		radio = r;
+		setRadio(r);
 	}
 	
 	private double getDistanciaPuntos(Circulo c) {
@@ -36,6 +32,14 @@ public class Circulo {
 			return false;
 		} 
 		return true;
+	}
+	
+	private void setRadio(double r) {
+		if (r <= 0) {
+			Error valorInvalido = new Error("Radio debe ser mayor a 0");
+			throw valorInvalido;
+		}
+		this.radio = r;
 	}
 	
 }
