@@ -13,7 +13,7 @@ public class Circulo {
 		radio = r;
 	}
 	
-	public double getDistanciaPuntos(Circulo c) {
+	private double getDistanciaPuntos(Circulo c) {
 	
 		double x1 = this.centro.getCoordX();
 		double x2 = c.centro.getCoordX();
@@ -24,7 +24,7 @@ public class Circulo {
 		return dist;
 	}
 	
-	public double getSumaRadios(Circulo c) {
+	private double getSumaRadios(Circulo c) {
 		return (double) (this.radio + c.radio);
 	}
 		

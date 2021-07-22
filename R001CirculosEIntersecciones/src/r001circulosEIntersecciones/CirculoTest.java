@@ -38,10 +38,10 @@ public class CirculoTest {
 	}
 	
 	@Test
-	public void getDistanciaPuntosValoresNegativosTest() {
+	public void circulosNoIntersectanValoresNegativosTest() {
 		circuloA = new Circulo(new Punto(-2, -10), 1.01); 
 		circuloB = new Circulo(new Punto(1, -99), 0.41);
-		assertEquals(89.05, circuloA.getDistanciaPuntos(circuloB), 0.001);
+		assertFalse(circuloA.intersectaCon(circuloB));
 	}
 	
 	/*
