@@ -3,30 +3,32 @@ package cuentaCifras;
 public class CuentaCifras {
 	
 	static public int contar(int num){
-		int resultado = 0; // aca esta el problema cuando llamo de vuelta me lo convierte en 0
-		int retValue;
-		if ( num > 9) {
-			while (num % 10 != 0) {
-				resultado += num % 10;
-				System.out.println("" + resultado);
-				num = num / 10;
-			}
-			retValue = resultado;
-			if (retValue > 9) {
-				return contar(retValue);
-			}
-
-		} else {
-			return num;
+		
+		
+		int unidad = (num / 1)  % 10;
+		int decena = (num / 10) % 10;
+		int centena = (num / 100) % 10;
+		int unidadDeMil = (num / 1000) % 10;
+		
+		int resultado = unidad + decena + centena + unidadDeMil;
+		
+		
+		if (resultado > 9) {
+			resultado = contar(resultado);
 		}
-				
-		return retValue;
+		
+		return resultado;
+		
+		
+		
+		
+		
 	}
 	
 	public static void main(String[] args) {
 		
 		// System.out.println(contar(222));// 6
-		System.out.println(contar(1111111111)); // 1
+		System.out.println(contar(8889)); // 1
 		// System.out.println(contar(7777)); // 1
 		// cuando la suma tiene que dar 1 devuelve 0
 	}
