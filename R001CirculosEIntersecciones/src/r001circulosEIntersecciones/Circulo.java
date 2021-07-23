@@ -24,14 +24,8 @@ public class Circulo {
 		return (double) (this.radio + c.radio);
 	}
 		
-	public boolean intersectaCon(Circulo c) {
-		double distanciaCentros = getDistanciaPuntos(c);
-		double sumaRadios = getSumaRadios(c);
-		
-		if (distanciaCentros > sumaRadios) {
-			return false;
-		} 
-		return true;
+	public boolean intersectaCon(Circulo c) {	
+		return getDistanciaPuntos(c) > getSumaRadios(c);
 	}
 	
 	private void setRadio(double r) {

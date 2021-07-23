@@ -24,7 +24,19 @@ public class CuentaInversion {
 	}
 	
 	public void cuantosMeses(double montoInvertir, double interesAnual, double saldoFinalDeseado) {
-		// CONTINUAR ACA
+		int mesesTranscurridos = 0;
+		saldo = montoInvertir;
+		interesMensual = (interesAnual * 100) / 12;
+		
+		while(saldo < saldoFinalDeseado) {
+			mesesTranscurridos++;
+			saldo += (interesMensual * saldo) / 100;
+		}
+		System.out.println("" + mesesTranscurridos);
 	}
 
 }
+/* preguntar si manejar ingreso de datos negativos
+ * 
+ * 
+ */

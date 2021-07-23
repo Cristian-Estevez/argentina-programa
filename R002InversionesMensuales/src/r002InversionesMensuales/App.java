@@ -6,6 +6,8 @@ public class App {
 		CuentaInversion miCuenta = new CuentaInversion();
 		miCuenta.resultadoInversion(1000, 0.24, 4);
 		
+		
+		miCuenta.cuantosMeses(1000, 0.24, 2587);
 	}
 
 }
