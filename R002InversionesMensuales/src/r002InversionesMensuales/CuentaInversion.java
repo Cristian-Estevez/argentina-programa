@@ -6,6 +6,12 @@ public class CuentaInversion {
 	private int cantidadMesesMaximo = 0;
 	private double interesMensual = 0;
 	
+	/**
+	 * @post: imprime por std output el monto acumulado por los intereses al final de cada año
+	 * @param montoInvertir
+	 * @param interesAnual
+	 * @param cantidadAniosMaximo
+	 */
 	public void resultadoInversion(double montoInvertir, double interesAnual, int cantidadAniosMaximo) {
 		interesMensual = (interesAnual * 100) / 12;
 		cantidadMesesMaximo = cantidadAniosMaximo * 12;
@@ -23,6 +29,12 @@ public class CuentaInversion {
 		}
 	}
 	
+	/**
+	 * @post: imprime por pantalla los meses que demora llegar al saldo final deseado
+	 * @param montoInvertir
+	 * @param interesAnual
+	 * @param saldoFinalDeseado
+	 */
 	public void cuantosMeses(double montoInvertir, double interesAnual, double saldoFinalDeseado) {
 		int mesesTranscurridos = 0;
 		saldo = montoInvertir;
