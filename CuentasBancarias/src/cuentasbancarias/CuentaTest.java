@@ -1,6 +1,9 @@
 package cuentasbancarias;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -43,11 +46,46 @@ public class CuentaTest {
 		assertEquals(0, miCuenta.getSaldo(), 0.001);
 	}
 	
-	@Test
+	@Test (expected=Error.class)
 	public void retiroDineroNoMeAlcanzaJustitoTest() {
-		miCuenta.agregarDinero(12345.80);
+		miCuenta.agregarDinero(12345.8);
 		miCuenta.retirarDinero(12346);
 		assertNotEquals(0, miCuenta.getSaldo(), 0.001);
 	}
 	
+	@Test (expected=Error.class)
+	public void cuentaNoSePuedeIniciarConSaldoNegativo() {
+		Cuenta c1 = new Cuenta(-344);
+		assertNull(c1);
+	}
+	
+	@Test
+	public void transferenciaExitosaTests() {
+		Cuenta c1 = new Cuenta(10_000);
+		Cuenta c2 = new Cuenta();
+		c1.transferir(550, c2);
+		assertEquals(9450, c1.getSaldo(), 0.001);
+		assertEquals(550, c2.getSaldo(), 0.001);
+	}
+	
+	@Test (expected=Error.class)
+	public void transferenciaConSaldoInsuficienteTest() {
+		Cuenta c1 = new Cuenta();
+		Cuenta c2 = new Cuenta();
+		c1.transferir(550, c2);
+	}
+	
+	@Test (expected=Error.class)
+	public void transferenciaConSaldoNegativoTest() {
+		Cuenta c1 = new Cuenta(10_000);
+		Cuenta c2 = new Cuenta();
+		c1.transferir(-550, c2);
+	}
+	
+	@Test (expected=Error.class)
+	public void transferirSaldoCeroTest() {
+		Cuenta c1 = new Cuenta(10_000);
+		Cuenta c2 = new Cuenta();
+		c1.transferir(0, c2);
+	}
 }

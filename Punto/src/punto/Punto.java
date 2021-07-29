@@ -10,11 +10,11 @@ public class Punto {
 	}
 	
 	public double getX() {
-		return x;
+		return this.x;
 	}
 	
 	public double getY() {
-		return y;
+		return this.y;
 	}
 	
 	public void setX(double nuevoX) {
@@ -26,11 +26,11 @@ public class Punto {
 	}	
 	
 	public boolean estaSobreEjeX() {
-		return x == 0;
+		return this.y == 0;
 	}
 	
 	public boolean estaSobreEjeY() {
-		return y == 0;
+		return this.x == 0;
 	}
 	
 	public boolean esELOrigen() {

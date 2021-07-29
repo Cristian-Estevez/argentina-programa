@@ -13,8 +13,8 @@ public class PuntoTest {
 	@Before
 	public void setup() {
 		p1 = new Punto(0, 0);
-		p2 = new Punto(1, 0);
-		p3 = new Punto(0, 1);
+		p2 = new Punto(0, 1);
+		p3 = new Punto(1, 0);
 		p4 = new Punto(12, 58);
 	}
 	
@@ -58,7 +58,7 @@ public class PuntoTest {
 	@Test
 	public void primeroNoEsOrigenYLuegoSi() {
 		assertFalse(p2.esELOrigen());
-		p2.setX(0);
+		p2.setY(0);
 		assertTrue(p2.esELOrigen());
 	}
 	

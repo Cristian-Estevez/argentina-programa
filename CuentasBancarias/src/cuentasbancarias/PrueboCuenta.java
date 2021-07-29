@@ -3,17 +3,16 @@ package cuentasbancarias;
 public class PrueboCuenta {
 
 	public static void main(String[] args) {
-		Cuenta miCuenta = new Cuenta();
-	    System.out.println(miCuenta.getSaldo()); // 0
+		Cuenta cuentaOrigen = new Cuenta();
+	    cuentaOrigen.agregarDinero(10000);
+	    System.out.println(cuentaOrigen.getSaldo()); // 10000
 
-	    miCuenta.agregarDinero(1000);
-	    System.out.println(miCuenta.getSaldo()); // 1000
+	    Cuenta cuentaDestino = new Cuenta();
+	    System.out.println(cuentaDestino.getSaldo()); // 0
 
-	    miCuenta.retirarDinero(550);
-	    System.out.println(miCuenta.getSaldo()); // 450
-	    
-	    miCuenta.retirarDinero(550);
-	    System.out.println(miCuenta.getSaldo()); // 
+	    cuentaOrigen.transferir(550, cuentaDestino);
+	    System.out.println(cuentaOrigen.getSaldo()); // 9450
+	    System.out.println(cuentaDestino.getSaldo()); // 550
 
 	}
 
