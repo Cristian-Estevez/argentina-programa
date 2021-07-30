@@ -35,7 +35,7 @@ public class SalaDeCine {
 	}
 	
 	public static void main(String[] args) {
-		SalaDeCine s1 = new SalaDeCine(4, 2);
+		SalaDeCine s1 = new SalaDeCine(8, 2);
 		s1.mostrarButacas();
 	}
 }

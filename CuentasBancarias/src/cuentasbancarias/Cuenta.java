@@ -27,12 +27,11 @@ public class Cuenta {
 	
 	public double retirarDinero(double dineroAretirar) {
 		this.validarMontoPositivo(dineroAretirar);
-		if ( dineroAretirar > this.saldo) {
+		if (dineroAretirar > this.saldo) {
 			throw new Error("Dinero insuficiente");
 		}
 		this.saldo -= dineroAretirar;
 		return dineroAretirar;
-	
 	}
 		
 	public double getSaldo() {
