@@ -14,8 +14,15 @@ public class Butaca {
 	
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return this.ocupada + " ";
+		if (this.ocupada) {
+			return "[  Ocupada   ]";
+		}
+		return "[ Desocupada ]";
+	}
+
+	public void ocuparAsiento() {
+		this.ocupada = true;
+		
 	}
 	
 	
