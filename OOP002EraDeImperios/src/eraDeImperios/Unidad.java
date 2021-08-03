@@ -33,11 +33,11 @@ public class Unidad {
 	 */
 	public void atacar(Unidad otraUnidad) {
 		if (this.distanciaCon(otraUnidad) < DISTANCIA_ATAQUE_MAXIMA) {
-			otraUnidad.recibirDanio();
+			otraUnidad.recibirDanio(DANIO);
 		}
 	}
 	
-	private void recibirDanio() {
-		this.salud -= DANIO;
+	protected void recibirDanio(int ptsDanio) {
+		this.salud -= ptsDanio;
 	}
 }

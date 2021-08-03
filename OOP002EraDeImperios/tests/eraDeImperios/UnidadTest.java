@@ -17,7 +17,7 @@ public class UnidadTest {
 	public void pruebasDeAtaqueADiferentesDistancias() {
 		Unidad u1 = new Unidad(new Posicion(0, 0));
 		Unidad u2 = new Unidad(new Posicion(1, 1));
-		Unidad u3 = new Unidad(new Posicion(2, 2));
+		Unidad u3 = new Unidad(new Posicion(0, 2));
 
 		assertEquals(100, u2.getSalud());
 		u1.atacar(u2);

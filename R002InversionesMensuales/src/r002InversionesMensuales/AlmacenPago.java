@@ -23,14 +23,10 @@ public class AlmacenPago
 		cantidadMesesMaximo = cantidadAniosMaximo * 12;
 		saldo = montoInvertir;
 		
-		
 		for (int i = 1; i <= cantidadMesesMaximo ; i++) {
-			
 			saldo += (interesMensual * saldo) / 100;
-			
 			if (i % 12 == 0) {
-				System.out.format("%.4f", saldo);
-				System.out.println("");
+				System.out.format("%.4f \n", saldo);
 			}
 		}
 	}
@@ -68,7 +64,7 @@ public class AlmacenPago
 			mesesTranscurridos++;
 			saldo += (interesMensual * saldo) / 100;
 		}
-		System.out.println("" + mesesTranscurridos);
+		System.out.println(mesesTranscurridos);
 	}
 
 	private void validarSaldoFinalDeseadoMayorAInicial(double montoInicial, double montoDeseado) {
