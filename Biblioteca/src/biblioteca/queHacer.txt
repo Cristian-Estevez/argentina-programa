@@ -1,0 +1,26 @@
+1- Quiere guardar los libros, y poder ordenarlos según distintos criterios.
+DONE 	De más largo a más breve
+DONE	Por título
+DONE	Por título normalizado ("El ingenioso hidalgo don Quijote de la Mancha" -> "ingenioso hidalgo don Quijote de la Mancha, El". Los artículos que inician el nombre de un libro, se colocan al final separados por una coma. "El Secreto -> Secreto, El")
+DONE 	Por año de publicación
+DONE 2- Quiere saber si compró dos veces el mismo libro, y como pueden ser distintas ediciones, le basta con que el título del libro y el autor coincidan para considerar que es el mismo libro.
+DONE 3- Quiere asignarle un género literario a cada libro (Ficción, Divulgación, Autoayuda, Infantil, etc).
+DONE 4- Quiere recortar los títulos a un largo determinado (200 caracteres, por ejemplo). Pero este límite quiere conservarlo en una constante, que puede cambiar en próximas ejecuciones del programa.
+DONE 5- Quiere visualizar los libros en formato APA: "Becquer, G. A. (2018). Rimas"
+6- Quiere contar cuántos libros tiene de cada género.
+
+Por supuesto, quiere comprobar todos y cada uno de estos hecho con pruebas en JUnit. ¡Yael está feliz por poder practicar tantos conceptos con algo que despierta su pasión!
+
+Como sabemos, va a utilizar cada uno de estos conceptos en su programa:
+final
+static
+package
+Annotations
+String
+toString
+clone
+equals
+hashCode
+Comparable
+Comparator
+enum
