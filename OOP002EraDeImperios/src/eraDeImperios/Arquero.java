@@ -10,6 +10,7 @@ public class Arquero extends Caballero {
 		super(unaPosicion);
 	}
 	
+	@Override
 	public void atacar(Unidad otraUnidad) {
 		double distancia = this.distanciaCon(otraUnidad);
 		if (distancia < DISTANCIA_ATAQUE_MAXIMA && distancia >= DISTANCIA_ATAQUE_MINIMA) {

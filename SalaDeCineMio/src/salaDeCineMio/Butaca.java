@@ -4,10 +4,6 @@ public class Butaca {
 	
 	boolean ocupada;
 	
-//	public Butaca() {
-//		this.ocupada = false;
-//	}
-		
 	public boolean estaOcupadoELAsiento() {
 		return this.ocupada;
 	}
@@ -22,8 +18,5 @@ public class Butaca {
 
 	public void ocuparAsiento() {
 		this.ocupada = true;
-		
-	}
-	
-	
+	}	
 }
