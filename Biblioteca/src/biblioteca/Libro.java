@@ -11,7 +11,8 @@ public class Libro implements Comparable<Libro> {
 	private Genero genero;
 	private static final int LARGO_MAXIMO_TITULO = 200;
 	
-	public Libro(int paginas, Autor autor, String titulo, int anioPublicacion, Genero genero) {
+	public Libro(int paginas, Autor autor, String titulo, int anioPublicacion, 
+				 Genero genero) {
 		this.paginas = paginas;
 		this.autor = autor;
 		this.titulo = this.tituloAcorde(titulo);
@@ -62,21 +63,21 @@ public class Libro implements Comparable<Libro> {
 	}
 	
 	public String getTituloNormalizado() {
-		String[] t = titulo.split(" ");
+		String[] articulo = titulo.split(" ");
 		String tituloNormalizado = "";
-		switch (t[0]) {
-			case "El":
-			case "La":
-			case "Un":
-			case "Los":
-			case "Las":
-			case "Una":
-			case "Unos":
-			case "Unas":
-				for (int i = 1; i < t.length; i++) {
-					tituloNormalizado += t[i] + " ";
+		switch (articulo[0].toLowerCase()) {
+			case "el":
+			case "la":
+			case "un":
+			case "los":
+			case "las":
+			case "una":
+			case "unos":
+			case "unas":
+				for (int i = 1; i < articulo.length; i++) {
+					tituloNormalizado += articulo[i] + " ";
 				}
-			tituloNormalizado += ", " + t[0];
+			tituloNormalizado += ", " + articulo[0];
 			return tituloNormalizado.trim();
 		}
 		return titulo;			
@@ -93,6 +94,10 @@ public class Libro implements Comparable<Libro> {
 
 	public String getTitulo() {
 		return titulo;
+	}
+
+	public Genero getGenero() {
+		return this.genero;
 	}
 	
 	

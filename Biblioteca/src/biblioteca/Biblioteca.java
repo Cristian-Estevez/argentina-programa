@@ -2,7 +2,7 @@ package biblioteca;
 
 import java.util.Arrays;
 
-public class Biblioteca {
+public class Biblioteca implements Cloneable{
 	
 	private Libro[] libros;
 	private int cantidadLibros;
@@ -53,5 +53,21 @@ public class Biblioteca {
 		return Arrays.toString(libros);
 	}
 	
+//	public Biblioteca clone() throws CloneNotSupportedException {
+//		Biblioteca clon = (Biblioteca) super.clone();
+//		clon.libros = new Libro[libros.length];
+//		for (int i = 0; i < clon.cantidadLibros; i++) {
+//			clon.libros[i] = libros[i].clone();
+//		}
+//		return clon;
+//	}
+	
+	public int[] librosPorGenero() {
+		int[] cantidadPorGenero = new int[Genero.values().length];
+		for (Libro libro : libros) {
+			cantidadPorGenero[libro.getGenero().ordinal()] += 1;
+		}
+		return cantidadPorGenero;
+	}
 	
 }

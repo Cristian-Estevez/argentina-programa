@@ -2,20 +2,30 @@ package eraDeImperios;
 
 public class Arquero extends Caballero {
 	
-	private static final int DANIO = 7;
-	private static final double DISTANCIA_ATAQUE_MAXIMA = 25;
-	private static final int DISTANCIA_ATAQUE_MINIMA = 5;
+	private final int DANIO = 7;
+	private final double DISTANCIA_ATAQUE_MAXIMA = 25;
+	private final int DISTANCIA_ATAQUE_MINIMA = 5;
+	private int flechasEnCarcaj;
 
 	public Arquero(Posicion unaPosicion) {
 		super(unaPosicion);
+		flechasEnCarcaj = 5;
 	}
 	
 	@Override
 	public void atacar(Unidad otraUnidad) {
-		double distancia = this.distanciaCon(otraUnidad);
-		if (distancia < DISTANCIA_ATAQUE_MAXIMA && distancia >= DISTANCIA_ATAQUE_MINIMA) {
-			otraUnidad.recibirDanio(DANIO);
+		if (flechasEnCarcaj <= 0) {
+			System.out.println("Debes recargar el carcaj");
 		}
-	}
+		double distancia = this.distanciaCon(otraUnidad);
+		if (distancia < DISTANCIA_ATAQUE_MAXIMA && distancia >= DISTANCIA_ATAQUE_MINIMA && 
+			flechasEnCarcaj > 0) {
+			otraUnidad.recibirDanio(DANIO);
+			flechasEnCarcaj--;
+		}
+	}	
 	
+	public void recargar() {
+		flechasEnCarcaj = 5;
+	}
 }

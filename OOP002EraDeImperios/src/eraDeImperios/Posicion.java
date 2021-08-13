@@ -21,4 +21,9 @@ public class Posicion {
 				+ (Math.pow(this.y - otraPosicion.y, 2)));
 		return dist;
 	}
+	
+	protected void moverse(int deltaX, int deltaY) {
+		this.x += deltaX;
+		this.y += deltaY;
+	}
 }

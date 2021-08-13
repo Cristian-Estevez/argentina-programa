@@ -2,9 +2,9 @@ package cuentasbancarias;
 
 public class CuentaDeAhorros extends Cuenta {
 
-	private double saldoAhorro = 0;
+	private double saldoReservado = 0;
 	
-	public CuentaDeAhorros(int saldo) {
+	public CuentaDeAhorros(double saldo) {
 		super(saldo);
 	}
 	
@@ -12,14 +12,21 @@ public class CuentaDeAhorros extends Cuenta {
 		super();
 	}
 	
-	public void ahorrar(double monto) {
+	public void reservarSaldo(double monto) {
 		super.validarMontoPositivo(monto);
 		super.retirarDinero(monto);
-		saldoAhorro += monto;
+		saldoReservado += monto;
 	}
 	
-	public double getSaldoAhorro() {
-		return saldoAhorro;
+	public double getSaldoReservado() {
+		return saldoReservado;
+	}
+	
+	public void reincorporarSaldo(double monto) {
+		if (monto >= this.getSaldo()) {
+			super.agregarDinero(monto);
+		}
+		throw new Error("El saldo reservado es menor al monto ingresado");
 	}
 
 	
