@@ -26,6 +26,7 @@ public class Arquero extends Caballero {
 		}
 	}	
 	
+	
 	public void recargar() {
 		flechasEnCarcaj = CANTIDAD_FLECHAS;
 	}
