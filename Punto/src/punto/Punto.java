@@ -36,6 +36,5 @@ public class Punto {
 	public boolean esELOrigen() {
 		return (this.estaSobreEjeX() && this.estaSobreEjeY());
 	}
-	
 }
 
