@@ -14,12 +14,12 @@ public class Caballero extends Unidad {
 	
 	@Override
 	public void atacar(Unidad otraUnidad) {
-		if(nivelDeMiedo >= 5) {
+		if(nivelDeMiedo >= 3) {
 			this.escapar();
 		}
 		double distancia = this.distanciaCon(otraUnidad);
 		if (distancia < DISTANCIA_ATAQUE_MAXIMA && distancia >= DISTANCIA_ATAQUE_MINIMA) {
-			otraUnidad.recibirDanio(DANIO);
+			otraUnidad.recibirDanio(DANIO, this);
 			nivelDeMiedo++;
 		}
 	}

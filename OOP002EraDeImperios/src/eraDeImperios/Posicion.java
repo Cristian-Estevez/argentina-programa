@@ -22,6 +22,7 @@ public class Posicion {
 		return dist;
 	}
 	
+	
 	protected void moverse(int deltaX, int deltaY) {
 		this.x += deltaX;
 		this.y += deltaY;

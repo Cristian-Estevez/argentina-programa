@@ -4,12 +4,13 @@ public class Soldado extends Unidad {
 
 	private final int DANIO = 20;
 	private final double DISTANCIA_ATAQUE_MAXIMA = 1.5;
+	private final static int STAMINA_INICIAL = 3;
 	private int stamina;
 	
 	
 	public Soldado(Posicion unaPosicion) {
 		super(unaPosicion);
-		stamina = 3;
+		stamina = STAMINA_INICIAL;
 	}
 
 	@Override
@@ -20,7 +21,7 @@ public class Soldado extends Unidad {
 		
 		if (this.distanciaCon(otraUnidad) < DISTANCIA_ATAQUE_MAXIMA && 
 				stamina > 0) {
-			otraUnidad.recibirDanio(DANIO);
+			otraUnidad.recibirDanio(DANIO, this);
 			stamina--;
 		}
 	}
@@ -30,8 +31,6 @@ public class Soldado extends Unidad {
 	 * para recuperar la stamina
 	 */
 	public void descansar() {
-		stamina = 3;
-	}
-	
-	
+		stamina = STAMINA_INICIAL;
+	}	
 }

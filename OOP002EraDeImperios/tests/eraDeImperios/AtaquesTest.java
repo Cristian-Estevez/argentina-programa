@@ -19,14 +19,12 @@ public class AtaquesTest {
 		c2.atacar(c3);
 		c2.atacar(c3);
 		c2.atacar(c3);
+		assertEquals(10, c3.getSalud());
 		c2.atacar(c3);
-		c2.atacar(c3);
-		assertEquals(-50, c3.getSalud());
-		c2.atacar(c3);
-		assertEquals(-50, c3.getSalud());//no recibió daño porque el caballo se alejó
+		assertEquals(10, c3.getSalud());//no recibió daño porque el caballo se alejó
 		c2.volverALaBatalla();
 		c2.atacar(c3);
-		assertEquals(-80, c3.getSalud());
+		assertEquals(0, c3.getSalud());
 	}
 	
 	@Test
