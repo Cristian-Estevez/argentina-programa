@@ -20,5 +20,14 @@ public class PrueboCuenta {
 //		System.out.println(ch.getSaldo());
 //		System.out.println(ch.getSaldoReservado());
 
+//		Cuenta c1 = new Cuenta();
+//		c1.agregarDinero(300);
+//		String s = c1.getDetallesTransaccion(1);
+//		System.out.println(s);
+//		
+//		Cuenta c2 = new Cuenta();
+//		c1.transferir(200, c2);
+//		System.out.println(c1.getDetallesTransaccion(2));
+
 	}
 }

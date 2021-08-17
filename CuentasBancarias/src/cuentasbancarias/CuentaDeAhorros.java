@@ -27,9 +27,5 @@ public class CuentaDeAhorros extends Cuenta {
 			super.agregarDinero(monto);
 		}
 		throw new Error("El saldo reservado es menor al monto ingresado");
-	}
-
-	
-	
-	
+	}	
 }
