@@ -1,7 +1,5 @@
 package cuentasBancarias;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 import cuentasbancarias.Cuenta;
