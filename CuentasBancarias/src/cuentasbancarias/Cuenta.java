@@ -1,20 +1,25 @@
 package cuentasbancarias;
 
+import java.util.Arrays;
+
 public class Cuenta {
 	
 	private double saldo = 0;
 	private Registro[] registros;
 	private int posicionRegistro = 1;
+	private int CANTIDAD_DE_REGISTROS_DEFAULT = 10;
 	
 	
 	public Cuenta(double saldo) {
 		this.validarMontoPositivo(saldo);
-		this.saldo = saldo;
-		registros = new Registro[30];
+		registros = new Registro[CANTIDAD_DE_REGISTROS_DEFAULT];
+		this.agregarDinero(saldo);
+
 	}
 	
 	public Cuenta() {
 		this(0);
+		registros = new Registro[CANTIDAD_DE_REGISTROS_DEFAULT];
 	}
 		
 	public void agregarDinero(double dineroAagregar) {
@@ -46,8 +51,12 @@ public class Cuenta {
 	}
 	
 	public void registrarTransaccion(double dineroAagregar, Motivo motivo) {
+		if (posicionRegistro > CANTIDAD_DE_REGISTROS_DEFAULT) {
+			posicionRegistro = 1;
+		}
 		registros[posicionRegistro - 1] = new Registro(dineroAagregar, motivo);
 		posicionRegistro++;
+		
 	}
 	
 	protected void validarMontoPositivo(double saldo) {
@@ -57,11 +66,13 @@ public class Cuenta {
 	}
 	
 	public String getDetallesTransaccion(int posicion) {
-		if(posicion <= posicionRegistro) {
+		if(posicion <= CANTIDAD_DE_REGISTROS_DEFAULT) {
 			return registros[posicion - 1].getDetallesTransaccion();
 		}
-		throw new Error("No existen registros en esa posición");
-		
+		throw new Error("No existen registros en esa posición");		
 	}
 
+	public void ordenarRegistros() {
+		Arrays.sort(registros);
+	}
 }

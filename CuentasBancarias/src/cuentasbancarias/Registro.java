@@ -3,7 +3,7 @@ package cuentasbancarias;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Registro {
+public class Registro implements Comparable<Registro> {
 
 	private double monto;
 	private Motivo motivo;
@@ -22,4 +22,14 @@ public class Registro {
 				this.motivo + "; " + this.monto + 
 				"; Fecha: " + (formatter.format(this.fechaYHora)));
 	}
+
+	private Date getFecha() {
+		return fechaYHora;
+	}
+	
+	@Override
+	public int compareTo(Registro otro) {
+		return getFecha().compareTo(otro.fechaYHora);
+	}
+
 }
