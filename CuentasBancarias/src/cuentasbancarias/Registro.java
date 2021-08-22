@@ -9,6 +9,8 @@ public class Registro implements Comparable<Registro> {
 	private Motivo motivo;
 	private Date fechaYHora;
 	
+	// faltó atributo cuenta origen y cuenta destino
+	
 	public Registro(double monto, Motivo motivo) {
 		this.motivo = motivo;
 		this.monto = monto;
@@ -30,6 +32,11 @@ public class Registro implements Comparable<Registro> {
 	@Override
 	public int compareTo(Registro otro) {
 		return getFecha().compareTo(otro.fechaYHora);
+	}
+
+	
+	public Double getMonto() {
+		return monto;
 	}
 
 }

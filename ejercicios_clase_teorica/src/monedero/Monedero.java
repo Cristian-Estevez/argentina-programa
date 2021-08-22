@@ -26,7 +26,6 @@ public class Monedero {
 	}
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Monedero miMonedero = new Monedero(1000);
 		
 		System.out.println("El dinero disponilbe es: " + miMonedero.verDineroDisponible());

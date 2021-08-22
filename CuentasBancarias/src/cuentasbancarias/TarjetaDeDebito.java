@@ -8,7 +8,7 @@ public class TarjetaDeDebito extends Productos implements Comprable {
 	
 	@Override
 	public void comprar(double monto) {
-		super.cuentaAsociada.retirarDinero(monto);
+		this.cuentaAsociada.retirarDinero(monto);
 	}
 
 }

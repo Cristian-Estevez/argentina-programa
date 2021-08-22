@@ -7,7 +7,6 @@ public class TarjetaDeCredito extends Productos implements Comprable {
 	
 	public TarjetaDeCredito(Cuenta cuenta) {
 		super(cuenta);
-		saldoAPagarAcumulado = 0;
 	}
 	
 	@Override

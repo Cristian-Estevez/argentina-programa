@@ -3,8 +3,7 @@ package claseteorica2;
 public class ClaseTeorica2 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
+	
 		int numero;
 		numero = 3;
 		

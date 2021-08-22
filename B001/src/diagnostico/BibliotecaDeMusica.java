@@ -31,7 +31,6 @@ public class BibliotecaDeMusica {
 		}
 		
 		public static void main(String[] args) {
-			// TODO Auto-generated method stub
 			Cancion bamba = new Cancion("la bamba", "pedro pereyra", "fiesta", 37050);
 			System.out.println(Cancion.getTiempoTotal());
 		}

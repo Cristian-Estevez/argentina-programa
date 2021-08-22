@@ -31,7 +31,6 @@ public class Rectangulo {
 
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Rectangulo rec = new Rectangulo(5, 2);
 		int area = rec.obtenerArea();
 		System.out.println(area);

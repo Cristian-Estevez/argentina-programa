@@ -7,7 +7,7 @@ public class Cuenta {
 	private double saldo = 0;
 	private Registro[] registros;
 	private int posicionRegistro = 1;
-	private int CANTIDAD_DE_REGISTROS_DEFAULT = 10;
+	private static final int CANTIDAD_DE_REGISTROS_DEFAULT = 10;
 	
 	
 	public Cuenta(double saldo) {
@@ -19,7 +19,6 @@ public class Cuenta {
 	
 	public Cuenta() {
 		this(0);
-		registros = new Registro[CANTIDAD_DE_REGISTROS_DEFAULT];
 	}
 		
 	public void agregarDinero(double dineroAagregar) {
@@ -75,4 +74,10 @@ public class Cuenta {
 	public void ordenarRegistros() {
 		Arrays.sort(registros);
 	}
+	
+	public void ordenarPorMonto() {
+		Arrays.sort(this.registros, 0, registros.length, new ComparadorPorMonto());;
+	}
+	// sin testear todavía
+	
 }
