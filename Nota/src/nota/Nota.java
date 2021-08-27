@@ -38,9 +38,6 @@ public class Nota {
 		this.valorNota = nota;
 	}
 	
-	public static void main(String[] args) {
-		Nota invalida = new Nota(11);
-	}
 }
 	
 

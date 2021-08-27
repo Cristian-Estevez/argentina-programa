@@ -6,6 +6,9 @@ public abstract class Vehiculo {
 	private double kilometrosRecorridos;
 	protected int pasajerosABordo;
 	
+	public Vehiculo() {
+	}
+	
 	public Vehiculo(Persona chofer) {
 		this.asignarChofer(chofer);
 	}
@@ -14,11 +17,12 @@ public abstract class Vehiculo {
 		this.chofer = chofer;
 	}
 	
-	public void cambiarChofer(Persona chofer) {
+	public void cambiarChofer(Persona chofer) throws ChoferException {
 		if (this.estaVacio()) {
 			this.asignarChofer(chofer);
 		} else {
-			throw new Error("El autbus debe estar vacío para poder cambiar de chofer");
+			throw new ChoferException("El vehículo no está vacio"); 
+//			Error("El autbus debe estar vacío para poder cambiar de chofer");
 		}
 	}
 	

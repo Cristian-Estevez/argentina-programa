@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import vehiculos.Autobus;
+import vehiculos.ChoferException;
 import vehiculos.Persona;
 
 public class AutobusTest {
@@ -22,8 +23,8 @@ public class AutobusTest {
 		
 	}
 	
-	@Test
-	public void cambiaDeChoferCuandoNoHayPasajeros() {
+	@Test 
+	public void cambiaDeChoferCuandoNoHayPasajeros() throws ChoferException {
 		int pasajerosEsperados = 0;
 		assertEquals(pasajerosEsperados, el60.getCantidadPasajerosAbordo());
 		assertEquals(carlitos, el60.getChofer());
@@ -31,8 +32,8 @@ public class AutobusTest {
 		assertEquals(paola, el60.getChofer());
 	}
 	
-	@Test (expected=Error.class)
-	public void noPermiteCambiarDeChoferConPasajerosABordo() {
+	@Test (expected=ChoferException.class)
+	public void noPermiteCambiarDeChoferConPasajerosABordo() throws ChoferException {
 		el60.subePasajero(paola);
 		el60.subePasajero(sergio);
 		el60.cambiarChofer(marina);

@@ -65,6 +65,7 @@ public class NotaTest {
 	
 	@Test(expected = Error.class)
 	public void valorIncorrectoTest() {
+		@SuppressWarnings("unused")
 		Nota n1 = new Nota(11);
 	}
 	

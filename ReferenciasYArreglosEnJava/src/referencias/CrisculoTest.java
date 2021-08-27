@@ -53,6 +53,7 @@ public class CrisculoTest {
 
 	@Test (expected=Error.class)
 	public void RadioInvalidoTest() {
+		@SuppressWarnings("unused")
 		Circulo c = new Circulo(-3);
 	}
 	

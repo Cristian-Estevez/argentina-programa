@@ -10,6 +10,9 @@ public class Autobus extends Vehiculo {
 		pasajeros = new Persona[CUPO_POSIBLE];
 	}
 	
+	public Autobus() {
+	}
+	
 	public void subePasajero(Persona pasajero) {
 		if(this.hayCupo()) {
 			pasajeros[pasajerosABordo++] = pasajero;
