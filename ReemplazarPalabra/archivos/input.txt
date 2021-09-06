@@ -1,0 +1,1 @@
+Un kit también puede formar parte de otro kit, por lo que un kit es un grupo de elementos de cualquiera de los tipos de elementos (simples o kit).  Cada tipo de elemento tiene un código, nombre y un precio.

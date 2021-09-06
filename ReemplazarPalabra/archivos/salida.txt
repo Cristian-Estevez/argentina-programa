@@ -1,0 +1,1 @@
+Un set también puede formar parte de otro set, por lo que un set es un grupo de elementos de cualquiera de los tipos de elementos (simples o set).  Cada tipo de elemento tiene un código, nombre y un precio.
