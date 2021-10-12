@@ -32,7 +32,6 @@ public class TiroTest {
 
 	@Test
 	public void unTiroFueraDeLaDianaDaCeroPuntos() {
-		int diametroDeDiana = 50;
 		double distanciaDelCentroTiroFuera = tiroFuera.getDistanciaDelCentro();
 		assertTrue(distanciaDelCentroTiroFuera > 50);
 		assertEquals(0, tiroFuera.getPuntajeTiro());

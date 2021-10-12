@@ -1,0 +1,30 @@
+{
+	"folders": {},
+	"connections": {
+		"sqlite_jdbc-17c2e7ae727-28438de36c7e2874": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "en_clase",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "/home/cristian/Desktop/en_clase",
+				"url": "jdbc:sqlite:/home/cristian/Desktop/en_clase",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}

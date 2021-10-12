@@ -37,23 +37,6 @@ public class Tiro implements Comparable<Tiro> {
 		return "Tiro [coordX=" + coordX + ", coordY=" + coordY + "]";
 	}
 
-//	@Override
-//	public int hashCode() {
-//		return Objects.hash(this.getPuntajeTiro());
-//	}
-//
-//	@Override
-//	public boolean equals(Object obj) {
-//		if (this == obj)
-//			return true;
-//		if (obj == null)
-//			return false;
-//		if (getClass() != obj.getClass())
-//			return false;
-//		Tiro other = (Tiro) obj;
-//		return this.getPuntajeTiro() == other.getPuntajeTiro();
-//	}
-
 	@Override
 	public int compareTo(Tiro o) {
 		int retorno = 0;
