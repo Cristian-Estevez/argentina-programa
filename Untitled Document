@@ -1,0 +1,13 @@
+SELECT "alias", "f_nacimiento", 
+cast((julianday('now')-julianday("f_nacimiento")) / 365.25 as int)
+as edad from usuario;
+
+
+
+busscar en youtube, crud en 4 horas
+19:02
+Esteban Ortenzi
+https://www.youtube.com/watch?v=7vHzVN0EiQc&t=51s
+Ese ultimo es JAVA para principiantes
+La mayoría de las cosas las vimnos aca
+Manda x1.25
